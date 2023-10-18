@@ -1,0 +1,6 @@
+framework module Pods_UserInteractiveWidget {
+  umbrella header "Pods-UserInteractiveWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}

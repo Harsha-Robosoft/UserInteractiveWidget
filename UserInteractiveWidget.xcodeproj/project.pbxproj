@@ -13,9 +13,45 @@
 		770659192ADFA02C001DF16B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 770659172ADFA02C001DF16B /* Main.storyboard */; };
 		7706591B2ADFA02D001DF16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7706591A2ADFA02D001DF16B /* Assets.xcassets */; };
 		7706591E2ADFA02D001DF16B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7706591C2ADFA02D001DF16B /* LaunchScreen.storyboard */; };
+		7706592B2ADFA76E001DF16B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7706592A2ADFA76E001DF16B /* WidgetKit.framework */; };
+		7706592D2ADFA76E001DF16B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7706592C2ADFA76E001DF16B /* SwiftUI.framework */; };
+		770659302ADFA76E001DF16B /* UserInteractionWidgetTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7706592F2ADFA76E001DF16B /* UserInteractionWidgetTestBundle.swift */; };
+		770659322ADFA76E001DF16B /* UserInteractionWidgetTestLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770659312ADFA76E001DF16B /* UserInteractionWidgetTestLiveActivity.swift */; };
+		770659342ADFA76E001DF16B /* UserInteractionWidgetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770659332ADFA76E001DF16B /* UserInteractionWidgetTest.swift */; };
+		770659372ADFA770001DF16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770659362ADFA770001DF16B /* Assets.xcassets */; };
+		770659392ADFA770001DF16B /* UserInteractionWidgetTest.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 770659352ADFA76E001DF16B /* UserInteractionWidgetTest.intentdefinition */; };
+		7706593A2ADFA770001DF16B /* UserInteractionWidgetTest.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 770659352ADFA76E001DF16B /* UserInteractionWidgetTest.intentdefinition */; };
+		7706593D2ADFA770001DF16B /* UserInteractionWidgetTestExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 770659292ADFA76E001DF16B /* UserInteractionWidgetTestExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DFC760719AA4BD7B9398EC85 /* Pods_UserInteractiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8753BA786A4359D2010598 /* Pods_UserInteractiveWidget.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7706593B2ADFA770001DF16B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 770659062ADFA02B001DF16B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 770659282ADFA76E001DF16B;
+			remoteInfo = UserInteractionWidgetTestExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7706593E2ADFA770001DF16B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7706593D2ADFA770001DF16B /* UserInteractionWidgetTestExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4D8753BA786A4359D2010598 /* Pods_UserInteractiveWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserInteractiveWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		655F4785F55B7D8F8BABA732 /* Pods-UserInteractiveWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserInteractiveWidget.debug.xcconfig"; path = "Target Support Files/Pods-UserInteractiveWidget/Pods-UserInteractiveWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		7706590E2ADFA02C001DF16B /* UserInteractiveWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserInteractiveWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		770659112ADFA02C001DF16B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		770659132ADFA02C001DF16B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +60,16 @@
 		7706591A2ADFA02D001DF16B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7706591D2ADFA02D001DF16B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7706591F2ADFA02D001DF16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		770659292ADFA76E001DF16B /* UserInteractionWidgetTestExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UserInteractionWidgetTestExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7706592A2ADFA76E001DF16B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		7706592C2ADFA76E001DF16B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7706592F2ADFA76E001DF16B /* UserInteractionWidgetTestBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractionWidgetTestBundle.swift; sourceTree = "<group>"; };
+		770659312ADFA76E001DF16B /* UserInteractionWidgetTestLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractionWidgetTestLiveActivity.swift; sourceTree = "<group>"; };
+		770659332ADFA76E001DF16B /* UserInteractionWidgetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractionWidgetTest.swift; sourceTree = "<group>"; };
+		770659352ADFA76E001DF16B /* UserInteractionWidgetTest.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = UserInteractionWidgetTest.intentdefinition; sourceTree = "<group>"; };
+		770659362ADFA770001DF16B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		770659382ADFA770001DF16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDA2175011D3BEC6E46B4948 /* Pods-UserInteractiveWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserInteractiveWidget.release.xcconfig"; path = "Target Support Files/Pods-UserInteractiveWidget/Pods-UserInteractiveWidget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +77,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC760719AA4BD7B9398EC85 /* Pods_UserInteractiveWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		770659262ADFA76E001DF16B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7706592D2ADFA76E001DF16B /* SwiftUI.framework in Frameworks */,
+				7706592B2ADFA76E001DF16B /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				770659102ADFA02C001DF16B /* UserInteractiveWidget */,
+				7706592E2ADFA76E001DF16B /* UserInteractionWidgetTest */,
 				7706590F2ADFA02C001DF16B /* Products */,
+				8103E7D8CA27D04D3B8043C4 /* Pods */,
+				FF56ED1B43B5122DD832CFC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				7706590E2ADFA02C001DF16B /* UserInteractiveWidget.app */,
+				770659292ADFA76E001DF16B /* UserInteractionWidgetTestExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +127,38 @@
 			path = UserInteractiveWidget;
 			sourceTree = "<group>";
 		};
+		7706592E2ADFA76E001DF16B /* UserInteractionWidgetTest */ = {
+			isa = PBXGroup;
+			children = (
+				7706592F2ADFA76E001DF16B /* UserInteractionWidgetTestBundle.swift */,
+				770659312ADFA76E001DF16B /* UserInteractionWidgetTestLiveActivity.swift */,
+				770659332ADFA76E001DF16B /* UserInteractionWidgetTest.swift */,
+				770659352ADFA76E001DF16B /* UserInteractionWidgetTest.intentdefinition */,
+				770659362ADFA770001DF16B /* Assets.xcassets */,
+				770659382ADFA770001DF16B /* Info.plist */,
+			);
+			path = UserInteractionWidgetTest;
+			sourceTree = "<group>";
+		};
+		8103E7D8CA27D04D3B8043C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				655F4785F55B7D8F8BABA732 /* Pods-UserInteractiveWidget.debug.xcconfig */,
+				FDA2175011D3BEC6E46B4948 /* Pods-UserInteractiveWidget.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF56ED1B43B5122DD832CFC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D8753BA786A4359D2010598 /* Pods_UserInteractiveWidget.framework */,
+				7706592A2ADFA76E001DF16B /* WidgetKit.framework */,
+				7706592C2ADFA76E001DF16B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,18 +166,39 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 770659222ADFA02D001DF16B /* Build configuration list for PBXNativeTarget "UserInteractiveWidget" */;
 			buildPhases = (
+				19184FB8073375CBDAF11EFB /* [CP] Check Pods Manifest.lock */,
 				7706590A2ADFA02C001DF16B /* Sources */,
 				7706590B2ADFA02C001DF16B /* Frameworks */,
 				7706590C2ADFA02C001DF16B /* Resources */,
+				5216F963395F82688A1C49AE /* [CP] Embed Pods Frameworks */,
+				7706593E2ADFA770001DF16B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7706593C2ADFA770001DF16B /* PBXTargetDependency */,
 			);
 			name = UserInteractiveWidget;
 			productName = UserInteractiveWidget;
 			productReference = 7706590E2ADFA02C001DF16B /* UserInteractiveWidget.app */;
 			productType = "com.apple.product-type.application";
+		};
+		770659282ADFA76E001DF16B /* UserInteractionWidgetTestExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 770659412ADFA770001DF16B /* Build configuration list for PBXNativeTarget "UserInteractionWidgetTestExtension" */;
+			buildPhases = (
+				770659252ADFA76E001DF16B /* Sources */,
+				770659262ADFA76E001DF16B /* Frameworks */,
+				770659272ADFA76E001DF16B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UserInteractionWidgetTestExtension;
+			productName = UserInteractionWidgetTestExtension;
+			productReference = 770659292ADFA76E001DF16B /* UserInteractionWidgetTestExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +211,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					7706590D2ADFA02C001DF16B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					770659282ADFA76E001DF16B = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -116,6 +232,7 @@
 			projectRoot = "";
 			targets = (
 				7706590D2ADFA02C001DF16B /* UserInteractiveWidget */,
+				770659282ADFA76E001DF16B /* UserInteractionWidgetTestExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -131,7 +248,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		770659272ADFA76E001DF16B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770659372ADFA770001DF16B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19184FB8073375CBDAF11EFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UserInteractiveWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5216F963395F82688A1C49AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UserInteractiveWidget/Pods-UserInteractiveWidget-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UserInteractiveWidget/Pods-UserInteractiveWidget-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UserInteractiveWidget/Pods-UserInteractiveWidget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7706590A2ADFA02C001DF16B /* Sources */ = {
@@ -140,11 +307,31 @@
 			files = (
 				770659162ADFA02C001DF16B /* ViewController.swift in Sources */,
 				770659122ADFA02C001DF16B /* AppDelegate.swift in Sources */,
+				7706593A2ADFA770001DF16B /* UserInteractionWidgetTest.intentdefinition in Sources */,
 				770659142ADFA02C001DF16B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		770659252ADFA76E001DF16B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770659322ADFA76E001DF16B /* UserInteractionWidgetTestLiveActivity.swift in Sources */,
+				770659342ADFA76E001DF16B /* UserInteractionWidgetTest.swift in Sources */,
+				770659392ADFA770001DF16B /* UserInteractionWidgetTest.intentdefinition in Sources */,
+				770659302ADFA76E001DF16B /* UserInteractionWidgetTestBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7706593C2ADFA770001DF16B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 770659282ADFA76E001DF16B /* UserInteractionWidgetTestExtension */;
+			targetProxy = 7706593B2ADFA770001DF16B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		770659172ADFA02C001DF16B /* Main.storyboard */ = {
@@ -282,7 +469,9 @@
 		};
 		770659232ADFA02D001DF16B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 655F4785F55B7D8F8BABA732 /* Pods-UserInteractiveWidget.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,7 +498,9 @@
 		};
 		770659242ADFA02D001DF16B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDA2175011D3BEC6E46B4948 /* Pods-UserInteractiveWidget.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -334,6 +525,58 @@
 			};
 			name = Release;
 		};
+		7706593F2ADFA770001DF16B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UserInteractionWidgetTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UserInteractionWidgetTest;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mundaragi.UserInteractiveWidget.UserInteractionWidgetTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		770659402ADFA770001DF16B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UserInteractionWidgetTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UserInteractionWidgetTest;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mundaragi.UserInteractiveWidget.UserInteractionWidgetTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -351,6 +594,15 @@
 			buildConfigurations = (
 				770659232ADFA02D001DF16B /* Debug */,
 				770659242ADFA02D001DF16B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		770659412ADFA770001DF16B /* Build configuration list for PBXNativeTarget "UserInteractionWidgetTestExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7706593F2ADFA770001DF16B /* Debug */,
+				770659402ADFA770001DF16B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
