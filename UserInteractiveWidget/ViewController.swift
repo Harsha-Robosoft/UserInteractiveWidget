@@ -11,6 +11,8 @@ import Combine
 import SDWebImage
 
 
+
+
 class TableViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageToShow: UIImageView!
@@ -30,7 +32,7 @@ class TableViewCell: UICollectionViewCell {
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView01: UICollectionView!
-    
+    var cancelable: [AnyCancellable] = []
     var resultdata = [AllDetails]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,6 @@ class ViewController: UIViewController {
         callTheAPi()
     }
     
-    var cancelable: [AnyCancellable] = []
     
     private func callTheAPi(){
         NetworkManager.networkCall(with: "all")
