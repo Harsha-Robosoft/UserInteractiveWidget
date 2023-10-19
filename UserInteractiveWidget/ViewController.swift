@@ -29,7 +29,12 @@ class TableViewCell: UICollectionViewCell {
     
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, URLHandlingDelegate {
+    
+    func handleURLResult(_ result: String) {
+        callTheAPi(with: result)
+    }
+    
 
     @IBOutlet weak var collectionView01: UICollectionView!
     var cancelable: [AnyCancellable] = []
@@ -38,12 +43,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         collectionView01.delegate = self
         collectionView01.dataSource = self
-        callTheAPi()
+        callTheAPi(with: "all")
     }
     
     
-    private func callTheAPi(){
-        NetworkManager.networkCall(with: "all")
+    private func callTheAPi(with: String){
+        NetworkManager.networkCall(with: with)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion{

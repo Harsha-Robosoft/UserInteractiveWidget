@@ -7,10 +7,44 @@
 
 import UIKit
 
+
+protocol URLHandlingDelegate: AnyObject {
+    func handleURLResult(_ result: String)
+}
+
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    weak var urlHandlingDelegate: URLHandlingDelegate?
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        
+        guard let url = URLContexts.first?.url.absoluteString else {
+            print("failed to get scheme and host")
+            return
+        }
+        print(url)
+        let result = extractCategory(url)
+        print(result)
+        
+        if let viewController = window?.rootViewController as? ViewController {
+                viewController.handleURLResult(result)
+        }
+    }
+    
+    func extractCategory(_ input: String) -> String {
+        // Base case: If the input is empty or does not contain "category/", return an empty string.
+        guard let range = input.range(of: "category/") else {
+            return ""
+        }
+
+        // Find the position of "category/" in the string.
+        let categoryIndex = range.upperBound
+
+        // Extract the part of the string after "category/".
+        return String(input.suffix(from: categoryIndex))
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

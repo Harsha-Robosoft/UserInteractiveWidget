@@ -10,25 +10,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-            guard url.scheme == "UserInteractiveWidget", url.host == "category" else {
-                
-                return false
-            }
-
-            // Extract the data from the URL
-            let category = url.pathComponents[1]
-            print(category)
-            // Now you can use the 'category' data in your app as needed
-
-            return true
-        }
-    
-    
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
