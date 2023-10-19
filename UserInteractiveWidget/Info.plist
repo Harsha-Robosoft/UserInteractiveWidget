@@ -25,5 +25,16 @@
 			</array>
 		</dict>
 	</dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>userinteractivewidget</string> <!-- Replace with your actual app's URL scheme -->
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>userinteractivewidget</string> <!-- Replace with your actual app's URL scheme -->
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>
