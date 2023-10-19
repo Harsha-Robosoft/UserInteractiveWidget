@@ -11,23 +11,23 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), images: nil)
+        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), images: [UIImage(imageLiteralResourceName: "testImage01"),UIImage(imageLiteralResourceName: "testImage02"),UIImage(imageLiteralResourceName: "testImage03")], category: "all")
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), images: nil)
+        let entry = SimpleEntry(date: Date(), configuration: configuration, images: [UIImage(imageLiteralResourceName: "testImage01"),UIImage(imageLiteralResourceName: "testImage02"),UIImage(imageLiteralResourceName: "testImage03")], category: "all")
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         Task {
-            guard let image = try? await DataFetcher.fetchMovieDetails() else {
+            guard let image = try? await DataFetcher.fetchMovieDetails(category: configuration.customCategory?.identifier ?? "all") else {
                 return
             }
             let currentDate = Date()
             let startOfDay = Calendar.current.startOfDay(for: currentDate)
             let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!
-            let entry = SimpleEntry(date: startOfDay, images: Array(image))
+            let entry = SimpleEntry(date: startOfDay, configuration: configuration, images: Array(image), category: configuration.customCategory?.identifier ?? "all")
             let timeline = Timeline(entries: [entry],policy: .after(endOfDay))
             completion(timeline)
         }
@@ -36,37 +36,53 @@ struct Provider: IntentTimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    let configuration: ConfigurationIntent
     let images: [UIImage]?
+    var category = "all"
+    
+    
+    var appUrl: URL {
+        guard let url = URL(string: "userinteractivewidget//:category/\(category)") else{
+            fatalError("unable to create app url")
+        }
+        
+        return url
+    }
 }
 
 struct UserInteractionWidgetTestEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        ZStack{
-            ContainerRelativeShape()
-                .fill(.brown.gradient.opacity(0.6))
-            VStack{
-                Text("Trending Contents")
-                    .font(.body)
-                    .fontWeight(.bold)
-                    .fontDesign(.rounded)
-                    .foregroundColor(.brown)
-                    .padding(.top, 5)
-                HStack{
-                    ForEach(entry.images!, id: \.self) { image in
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFill()
-                            .cornerRadius(8)
-                            .shadow(color: .black.opacity(0.5), radius: 8, x: 5, y: 5)
-                            .frame(width: 80, height:  90)
-                            .padding(5)
+        Link(destination: entry.appUrl, label: {
+            ZStack{
+                ContainerRelativeShape()
+                    .fill(.brown.gradient.opacity(0.6))
+                VStack{
+                    Text("Trending Category: \(entry.configuration.customCategory?.displayString ?? "All")")
+                        .font(.body)
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
+                        .foregroundColor(.brown)
+                        .padding(.top, 5)
+    //                    .widgetURL(entry.appUrl)
+                    HStack{
+                        ForEach(entry.images!, id: \.self) { image in
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFill()
+                                .cornerRadius(8)
+                                .shadow(color: .black.opacity(0.5), radius: 8, x: 5, y: 5)
+                                .frame(width: 80, height:  90)
+                                .padding(5)
+                        }
                     }
+                    
+                    Spacer()
                 }
-                Spacer()
+                
             }
-        }
+        })
     }
 }
 
@@ -85,7 +101,7 @@ struct UserInteractionWidgetTest: Widget {
 
 struct UserInteractionWidgetTest_Previews: PreviewProvider {
     static var previews: some View {
-        UserInteractionWidgetTestEntryView(entry: SimpleEntry(date: Date(), images: [UIImage(imageLiteralResourceName: "testImage01"),UIImage(imageLiteralResourceName: "testImage02"),UIImage(imageLiteralResourceName: "testImage03")]))
+        UserInteractionWidgetTestEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), images: [UIImage(imageLiteralResourceName: "testImage01"),UIImage(imageLiteralResourceName: "testImage02"),UIImage(imageLiteralResourceName: "testImage03")], category: "all"))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
@@ -132,8 +148,8 @@ struct DataFetcher {
         cachedImages != nil
     }
     
-    static func fetchMovieDetails() async throws -> [UIImage] {
-        guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/day?api_key=f393d52a4b88513749207fa6a234dda9") else{
+    static func fetchMovieDetails(category of: String) async throws -> [UIImage] {
+        guard let url = URL(string: "https://api.themoviedb.org/3/trending/\(of)/day?api_key=f393d52a4b88513749207fa6a234dda9") else{
             throw DataFetcherError.imageDataCorrupted
         }
         let (data, _) = try await URLSession.shared.data(from: url)
